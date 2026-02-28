@@ -1,1 +1,155 @@
- 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000;
+    --white: #fff;
+    --active: rgb(255, 235, 171);
+
+    --gap: 15px;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+header.header {
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.menu {
+    width: 100%;
+    height: 75px;
+
+    padding: var(--gap);
+
+    background-color: var(--black);
+    color: var(--white);
+
+    & * {
+        display: inline-block;
+        height: 100%;
+    }
+
+    .logo {
+
+        a {
+            height: auto;
+        }
+    }
+
+    nav.menu-buttons {
+        float: right;
+
+        a {
+            margin-inline: var(--gap);
+            font-size: 20px;
+            line-height: calc(75px - 2 * var(--gap));
+            transition: scale .2s ease, color .2s ease;
+
+            &:hover {
+                scale: 1.05;
+            }
+
+            &:active {
+                color: var(--active);
+            }
+        }
+    }
+
+    #toggler {
+        display: none;
+    }
+
+    #toggler:checked~.menu-mobile-buttons {
+        transform: scaleY(1);
+    }
+
+    label.toggler-btn {
+        --size: 100%;
+
+        display: none;
+
+        height: var(--size);
+        aspect-ratio: 5 / 4;
+
+        float: right;
+
+        position: relative;
+
+        span {
+            display: block;
+
+            width: 100%;
+            height: 7px;
+
+            background-color: var(--white);
+            border-radius: 5px;
+
+            position: absolute;
+            left: 0;
+
+            &:nth-of-type(1) {
+                top: 0;
+            }
+
+            &:nth-of-type(2) {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &:nth-of-type(3) {
+                bottom: 0;
+            }
+        }
+    }
+
+    .menu-mobile-buttons {
+        display: none;
+
+        width: 100%;
+        height: auto;
+
+        background-color: var(--black);
+        color: var(--white);
+
+        position: absolute;
+        top: 75px;
+        left: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform .4s ease-in-out;
+
+        a {
+            display: block;
+            height: 40px;
+            margin: 0;
+            text-align: center;
+            line-height: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 764px) {
+    .menu {
+        nav.menu-buttons {
+            display: none;
+        }
+    
+        label.toggler-btn,
+        .menu-mobile-buttons {
+            display: block;
+        }
+    }
+}
