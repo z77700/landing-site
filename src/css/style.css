@@ -22,6 +22,9 @@ a {
 header.header {
     width: 100%;
 
+    background-color: var(--black);
+    color: var(--white);
+
     position: fixed;
     top: 0;
     left: 0;
@@ -33,9 +36,6 @@ header.header {
     height: 75px;
 
     padding: var(--gap);
-
-    background-color: var(--black);
-    color: var(--white);
 
     & * {
         display: inline-block;
@@ -141,7 +141,7 @@ header.header {
     }
 }
 
-@media screen and (max-width: 764px) {
+@media screen and (max-width: 1024px) {
     .menu {
         nav.menu-buttons {
             display: none;
