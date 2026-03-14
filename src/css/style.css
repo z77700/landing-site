@@ -49,7 +49,7 @@ main {
 }
 
 main > section + section {
-    margin-block: max(50px, calc(100 / 1440 * 100cqw));
+    padding-block: max(50px, calc(100 / 1440 * 100cqw));
 }
 
 /* Header start */
