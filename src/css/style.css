@@ -166,6 +166,8 @@ header.header {
 .start {
     height: calc(100dvh - var(--menu-size));
     position: relative;
+
+    overflow: hidden;
 }
 
 .start-content {
@@ -212,11 +214,78 @@ header.header {
 }
 
 .start-background {
-    background-color: bisque;
+    background-image: linear-gradient(#DB7E7E, #FFC997);
 
     position: absolute;
     inset: 0;
     z-index: -1;
+
+    &>img {
+        position: absolute;
+    }
+
+    #octagon {
+        width: 10%;
+
+        left: 50%;
+        bottom: 30%;
+        transform: translate(0%, 50%);
+    }
+
+    #triangle {
+        width: 9%;
+
+        left: 50%;
+        top: 30%;
+        transform: translate(-100%, 0%);
+    }
+
+    #circle-bordered {
+        width: 10%;
+
+        left: 0;
+        bottom: 0;
+        transform: translate(150%, 24%);
+        z-index: 2;
+    }
+
+    #circle-dashed-border {
+        width: 29%;
+
+        right: 0;
+        bottom: 0;
+        transform: translate(15%, 25%);
+    }
+
+    #circle1 {
+        /* 388px ширина */
+        /* 1920px ширина экрана на fullhd */
+        /* 388 / 1920 = 0.2020833333 */
+        /* В процентах это 20% */
+        width: 20%;
+
+        left: 0;
+        top: 0;
+        transform: translate(-25%, -5dvw);
+        transform-origin: top;
+    }
+
+    #circle2 {
+        width: 20%;
+
+        right: 0;
+        top: 0;
+        transform: translate(20%, -10dvw);
+    }
+
+    #circle3 {
+        width: 32%;
+
+        left: 0;
+        bottom: 0;
+        transform: translate(-10%, 10%);
+        /* из-за кнопки полного экрана залагало */
+    }
 }
 
 /* Start end */
