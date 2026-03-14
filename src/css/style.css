@@ -27,13 +27,29 @@ a {
 .container {
     max-width: 1440px;
     margin-inline: auto;
+    padding-inline: var(--gap);
 
     container-name: container;
     container-type: inline-size;
 }
 
+.section-title {
+    font-size: max(30px, calc(50 / 1440 * 100cqw));
+    text-align: center;
+    margin-bottom: max(30px, calc(30 / 1440 * 100cqw));
+}
+
+.section-text {
+    font-size: max(16px, calc(20 / 1440 * 100cqw));
+    line-height: max(25px, calc(30 / 1440 * 100cqw));
+}
+
 main {
     margin-top: var(--menu-size);
+}
+
+main > section + section {
+    margin-block: max(50px, calc(100 / 1440 * 100cqw));
 }
 
 /* Header start */
@@ -289,6 +305,13 @@ header.header {
 }
 
 /* Start end */
+
+/* About start */
+.about {
+    background-color: var(--white);
+    color: var(--black);
+}
+/* About end */
 
 
 /* Media start */
