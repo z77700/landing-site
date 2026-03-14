@@ -198,7 +198,7 @@ header.header {
 .start-title {
     margin-bottom: calc(var(--gap) * 3);
 
-    font-size: 7cqw;
+    font-size: max(30px, 7cqw);
 
     color: var(--white);
     text-shadow: 0.6cqw 0.6cqw 0 var(--active);
@@ -208,9 +208,9 @@ header.header {
 .start-button {
     display: inline-block;
 
-    padding: 1.5cqw;
+    padding: max(16px, 1.5cqw);
 
-    font-size: 1.3cqw;
+    font-size: max(18px, 1.3cqw);
 
     background-color: var(--white);
     color: var(--black);
