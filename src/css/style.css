@@ -1,16 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
 }
 
 :root {
     --black: #000;
     --white: #fff;
-    --active: rgb(255, 235, 171);
+    --active: #e06161;
 
+    --menu-size: 75px;
     --gap: 15px;
 }
 
@@ -19,8 +24,24 @@ a {
     text-decoration: none;
 }
 
+.container {
+    max-width: 1440px;
+    margin-inline: auto;
+
+    container-name: container;
+    container-type: inline-size;
+}
+
+main {
+    margin-top: var(--menu-size);
+}
+
+/* Header start */
 header.header {
     width: 100%;
+
+    background-color: var(--black);
+    color: var(--white);
 
     position: fixed;
     top: 0;
@@ -30,12 +51,9 @@ header.header {
 
 .menu {
     width: 100%;
-    height: 75px;
+    height: var(--menu-size);
 
     padding: var(--gap);
-
-    background-color: var(--black);
-    color: var(--white);
 
     & * {
         display: inline-block;
@@ -55,7 +73,7 @@ header.header {
         a {
             margin-inline: var(--gap);
             font-size: 20px;
-            line-height: calc(75px - 2 * var(--gap));
+            line-height: calc(var(--menu-size) - 2 * var(--gap));
             transition: scale .2s ease, color .2s ease;
 
             &:hover {
@@ -141,15 +159,150 @@ header.header {
     }
 }
 
-@media screen and (max-width: 764px) {
+/* Header end */
+
+
+/* Start start :D */
+.start {
+    height: calc(100dvh - var(--menu-size));
+    position: relative;
+
+    overflow: hidden;
+}
+
+.start-content {
+    text-align: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.start-title {
+    margin-bottom: calc(var(--gap) * 3);
+
+    font-size: 7cqw;
+
+    color: var(--white);
+    text-shadow: 0.6cqw 0.6cqw 0 var(--active);
+    white-space: nowrap;
+}
+
+.start-button {
+    display: inline-block;
+
+    padding: 1.5cqw;
+
+    font-size: 1.3cqw;
+
+    background-color: var(--white);
+    color: var(--black);
+
+    box-shadow: 0.6cqw 0.6cqw 0 var(--active);
+    border-radius: 50px;
+    transition: scale .3s ease, transform .3s ease, box-shadow .3s ease;
+
+    &:hover {
+        scale: 1.05;
+    }
+
+    &:active {
+        transform: translate(0.3cqw, 0.3cqw);
+        box-shadow: 0.6 0 0 var(--active);
+    }
+}
+
+.start-background {
+    background-image: linear-gradient(#DB7E7E, #FFC997);
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    &>img {
+        position: absolute;
+    }
+
+    #octagon {
+        width: 10%;
+
+        left: 50%;
+        bottom: 30%;
+        transform: translate(0%, 50%);
+    }
+
+    #triangle {
+        width: 9%;
+
+        left: 50%;
+        top: 30%;
+        transform: translate(-100%, 0%);
+    }
+
+    #circle-bordered {
+        width: 10%;
+
+        left: 0;
+        bottom: 0;
+        transform: translate(150%, 24%);
+        z-index: 2;
+    }
+
+    #circle-dashed-border {
+        width: 29%;
+
+        right: 0;
+        bottom: 0;
+        transform: translate(15%, 25%);
+    }
+
+    #circle1 {
+        /* 388px ширина */
+        /* 1920px ширина экрана на fullhd */
+        /* 388 / 1920 = 0.2020833333 */
+        /* В процентах это 20% */
+        width: 20%;
+
+        left: 0;
+        top: 0;
+        transform: translate(-25%, -5dvw);
+        transform-origin: top;
+    }
+
+    #circle2 {
+        width: 20%;
+
+        right: 0;
+        top: 0;
+        transform: translate(20%, -10dvw);
+    }
+
+    #circle3 {
+        width: 32%;
+
+        left: 0;
+        bottom: 0;
+        transform: translate(-10%, 10%);
+        /* из-за кнопки полного экрана залагало */
+    }
+}
+
+/* Start end */
+
+
+/* Media start */
+@media screen and (max-width: 1024px) {
     .menu {
         nav.menu-buttons {
             display: none;
         }
-    
+
         label.toggler-btn,
         .menu-mobile-buttons {
             display: block;
         }
     }
 }
+
+/* Meadia end */
