@@ -14,6 +14,8 @@
     --black: #000;
     --white: #fff;
     --active: #e06161;
+    --bg-color1: #DB7E7E;
+    --bg-color2: #FFC997;
 
     --menu-size: 75px;
     --gap: 15px;
@@ -44,11 +46,18 @@ a {
     line-height: max(25px, calc(30 / 1440 * 100cqw));
 }
 
+.active-colors {
+    background-color: var(--white);
+    color: var(--black);
+
+    box-shadow: 0.6cqw 0.6cqw 0 var(--active);
+}
+
 main {
     margin-top: var(--menu-size);
 }
 
-main > section + section {
+main>section+section {
     padding-block: max(50px, calc(100 / 1440 * 100cqw));
 }
 
@@ -311,8 +320,42 @@ header.header {
     background-color: var(--white);
     color: var(--black);
 }
+
 /* About end */
 
+
+/* Doing start */
+.doing {
+    background: linear-gradient(-175deg, white, white 30%, var(--bg-color2) 30%, var(--bg-color1) 85%);
+
+    .content,
+    .picture {
+        display: inline-block;
+        width: 44cqw;
+        vertical-align: bottom;
+    }
+
+    .content {
+
+        .section-text {
+            width: 450px;
+            margin-inline: auto;
+
+            border-radius: 2cqw;
+            padding: 2cqw;
+        }
+    }
+
+    .picture {
+        margin-left: 10cqw;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+/* Doing end */
 
 /* Media start */
 @media screen and (max-width: 1024px) {
@@ -324,6 +367,52 @@ header.header {
         label.toggler-btn,
         .menu-mobile-buttons {
             display: block;
+        }
+    }
+
+    .doing {
+
+        .content,
+        .picture {
+            width: 100%;
+        }
+
+        .content {
+
+            .section-text {
+                width: auto;
+            }
+        }
+
+        .picture {
+            margin-top: 10cqw;
+            margin-left: 0;
+
+            display: none;
+        }
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .active-colors {
+        background-color: var(--white);
+        color: var(--black);
+
+        box-shadow: 0.6cqh 0.6cqh 0 var(--active);
+    }
+
+
+    .doing {
+
+        .content {
+
+            .section-text {
+                padding: 2cqh;
+            }
+        }
+
+        .picture {
+            margin-top: 10cqh;
         }
     }
 }
