@@ -358,7 +358,7 @@ header.header {
 /* Doing end */
 
 /* Media start */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1440px) {
     .menu {
         nav.menu-buttons {
             display: none;
@@ -369,7 +369,9 @@ header.header {
             display: block;
         }
     }
+}
 
+@media screen and (max-width: 1024px) {
     .doing {
 
         .content,
