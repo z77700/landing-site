@@ -221,10 +221,6 @@ header.header {
 
     font-size: max(18px, 1.3cqw);
 
-    background-color: var(--white);
-    color: var(--black);
-
-    box-shadow: 0.6cqw 0.6cqw 0 var(--active);
     border-radius: 50px;
     transition: scale .3s ease, transform .3s ease, box-shadow .3s ease;
 
@@ -239,7 +235,7 @@ header.header {
 }
 
 .start-background {
-    background-image: linear-gradient(#DB7E7E, #FFC997);
+    background-image: linear-gradient(var(--bg-color1), var(--bg-color2));
 
     position: absolute;
     inset: 0;
