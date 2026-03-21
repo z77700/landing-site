@@ -80,6 +80,8 @@ header.header {
 
     padding: var(--gap);
 
+    user-select: none;
+
     & * {
         display: inline-block;
         height: 100%;
