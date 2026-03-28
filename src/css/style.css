@@ -324,7 +324,7 @@ header.header {
 
 /* Doing start */
 .doing {
-    background: linear-gradient(-175deg, white, white 30%, var(--bg-color2) 30%, var(--bg-color1) 85%);
+    background: linear-gradient(-175deg, white, white 30%, var(--bg-color2) 30%, var(--bg-color1) 60%);
 
     .content,
     .picture {
@@ -355,6 +355,65 @@ header.header {
 
 /* Doing end */
 
+/* Services start */
+.services {
+    background: linear-gradient(-10deg, white, white 20%, var(--bg-color2) 20%, var(--bg-color1) 60%);
+
+    .services-title {
+        color: white;
+        text-align: center;
+    }
+
+    .services-card.card {
+        --card-width: 30%;
+
+        background-color: white;
+        display: inline-block;
+
+        width: var(--card-width);
+        aspect-ratio: 3 / 4;
+        padding: 25px;
+
+        border: 0.5cqw solid var(--bg-color2);
+        border-radius: 25px;
+
+        text-align: center;
+        vertical-align: top;
+
+        &+& {
+            margin-left: calc((100% - var(--card-width) * 3) / 2 - 1%);
+        }
+
+        *+* {
+            margin-top: 15px;
+        }
+
+        .card-icon {
+            width: 70%;
+        }
+
+        .card-title {
+            font-size: 28px;
+        }
+
+        .card-devider {
+            max-width: 70%;
+            height: .3cqw;
+
+            margin-inline: auto;
+
+            border: none;
+            background-color: var(--bg-color1);
+        }
+
+        .card-text {
+            font-size: 22px;
+        }
+    }
+}
+
+/* Services end */
+
 /* Media start */
 @media screen and (max-width: 1440px) {
     .menu {
@@ -367,7 +426,34 @@ header.header {
             display: block;
         }
     }
+    
+    .services {
+        background: linear-gradient(-10deg, white, white 20%, var(--bg-color2) 20%, var(--bg-color1) 60%);
+    
+        .services-title {
+            color: white;
+            text-align: center;
+        }
+    
+        .services-card.card {
+            --card-width: 85%;
+    
+            display: block;
+    
+            width: var(--card-width);
+            max-width: 600px;
+            aspect-ratio: 3 / 4;
+    
+            margin-inline: auto;
+    
+            &+& {
+                margin-left: auto;
+                margin-top: 40px;
+            }
+        }
+    }
 }
+
 
 @media screen and (max-width: 1024px) {
     .doing {
