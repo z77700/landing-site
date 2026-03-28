@@ -414,6 +414,36 @@ header.header {
 
 /* Services end */
 
+/* Advantages start */
+.advantages-card.card {
+    max-width: 1120px;
+
+    padding: 1.4cqw max(1cqw, 10px) 0.7cqw;
+
+    border: 0.5cqw solid var(--bg-color2);
+    border-radius: 0.7cqw;
+
+    list-style-type: none;
+
+    &:nth-of-type(even) {
+        margin-left: auto;
+    }
+
+    &+& {
+        margin-top: max(20px, 3.5cqw);
+    }
+
+    .card-qualities {
+        padding: 0.7cqw 1em;
+    }
+
+    .card-qualitie {
+        padding-block: 0.14cqw;
+    }
+}
+
+/* Advantages end */
+
 /* Media start */
 @media screen and (max-width: 1440px) {
     .menu {
@@ -426,26 +456,26 @@ header.header {
             display: block;
         }
     }
-    
+
     .services {
         background: linear-gradient(-10deg, white, white 20%, var(--bg-color2) 20%, var(--bg-color1) 60%);
-    
+
         .services-title {
             color: white;
             text-align: center;
         }
-    
+
         .services-card.card {
             --card-width: 85%;
-    
+
             display: block;
-    
+
             width: var(--card-width);
             max-width: 600px;
             aspect-ratio: 3 / 4;
-    
+
             margin-inline: auto;
-    
+
             &+& {
                 margin-left: auto;
                 margin-top: 40px;
@@ -499,6 +529,21 @@ header.header {
 
         .picture {
             margin-top: 10cqh;
+        }
+    }
+
+    .advantages-card.card {
+        border: 0.5cqh solid var(--bg-color2);
+        border-radius: 1.2cqh;
+
+        box-shadow: none;
+
+        .card-qualities {
+            padding: 0.7cqh 1em;
+        }
+
+        .card-qualitie {
+            padding-block: 0.14cqh;
         }
     }
 }
