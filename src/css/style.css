@@ -415,8 +415,39 @@ header.header {
 /* Services end */
 
 /* Advantages start */
+.advantages {
+    position: relative;
+    overflow: hidden;
+
+    .background {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        #circle {
+            width: auto;
+            height: calc(753 / 1080 * 100%);
+
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            /* transform: translate(20%, 0%); */
+        }
+
+        #hexagon {
+            width: auto;
+            height: calc(453 / 1080 * 100%);
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
 .advantages-card.card {
     max-width: 1120px;
+    background-color: var(--white);
 
     padding: 1.4cqw max(1cqw, 10px) 0.7cqw;
 
@@ -529,6 +560,22 @@ header.header {
 
         .picture {
             margin-top: 10cqh;
+        }
+    }
+
+    .advantages {
+
+        .background {
+
+            #circle {
+                width: calc(780 / 1920 * 100%);
+                height: auto;
+            }
+
+            #hexagon {
+                width: calc(401 / 1920 * 100%);
+                height: auto;
+            }
         }
     }
 
