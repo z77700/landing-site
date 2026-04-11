@@ -532,6 +532,45 @@ header.header {
 
 /* Demo end */
 
+/* Footer start */
+.footer {
+    min-height: 20dvh;
+    background-image: linear-gradient(var(--bg-color1), var(--bg-color2));
+
+    .content {
+        padding: 5%;
+    }
+}
+
+.footer-title {
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+.footer-button {
+    display: block;
+
+    width: max-content;
+    margin-inline: auto;
+    text-align: center;
+
+    padding: 15px 40px;
+    border-radius: 50px;
+
+    transition: scale .4s ease-in-out,  transform .3s ease, box-shadow .3s ease;;
+
+    &:hover {
+        scale: 1.05;
+    }
+
+    &:active {
+        transform: translate(0.3cqw, 0.3cqw);
+        box-shadow: 0.6 0 0 var(--active);
+    }
+}
+/* Footer end */
+
 /* Media start */
 @media screen and (max-width: 1440px) {
     .menu {
@@ -707,5 +746,4 @@ header.header {
         }
     }
 }
-
 /* Meadia end */
