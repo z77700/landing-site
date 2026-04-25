@@ -26,6 +26,13 @@
 a {
     color: unset;
     text-decoration: none;
+
+    /* Убирает подсветку в Chrome/Safari */
+    -webkit-tap-highlight-color: transparent;
+    /* Отключает системное меню при долгом нажатии */
+    -webkit-touch-callout: none;
+    /* Запрещает выделение текста/иконок внутри */
+    user-select: none;
 }
 
 .container {
@@ -119,12 +126,57 @@ header.header {
         display: none;
     }
 
+    #toggler~.toggler-btn {
+        span {
+            transform-origin: center;
+
+            animation-duration: .5s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-fill-mode: both;
+        }
+    }
+
+    #toggler:checked~.toggler-btn {
+        span {
+
+            &:nth-of-type(1) {
+                animation-name: menu-btn-top;
+            }
+
+            &:nth-of-type(2) {
+                animation-name: menu-btn-medium;
+            }
+
+            &:nth-of-type(3) {
+                animation-name: menu-btn-bottom;
+            }
+        }
+    }
+
+    #toggler:not(:checked)~.toggler-btn {
+        span {
+
+            &:nth-of-type(1) {
+                animation-name: menu-btn-top-reverse;
+            }
+
+            &:nth-of-type(2) {
+                animation-name: menu-btn-medium-reverse;
+            }
+
+            &:nth-of-type(3) {
+                animation-name: menu-btn-bottom-reverse;
+            }
+        }
+    }
+
     #toggler:checked~.menu-mobile-buttons {
         transform: scaleY(1);
     }
 
     label.toggler-btn {
-        --size: 100%;
+        --size: 45px;
 
         display: none;
 
@@ -134,6 +186,8 @@ header.header {
         float: right;
 
         position: relative;
+
+        user-select: none;
 
         span {
             display: block;
@@ -467,27 +521,27 @@ header.header {
                 cicle-ambient 10s ease 5s infinite alternate;
 
             animation-play-state: paused;
-            
+
             &.visible {
                 animation-play-state: running;
             }
         }
-        
+
         #hexagon {
             width: auto;
             height: calc(453 / 1080 * 100%);
-            
+
             position: absolute;
             left: 0;
             top: 0;
             transform-origin: center;
-            
+
             animation:
-            hexagon-motion 2s ease-in-out 0s both,
-            hexagon-rotation-scaling 2s linear 2s both;
-            
+                hexagon-motion 2s ease-in-out 0s both,
+                hexagon-rotation-scaling 2s linear 2s both;
+
             animation-play-state: paused;
-            
+
             &.visible {
                 animation-play-state: running;
             }
@@ -920,5 +974,111 @@ header.header {
 
     100% {
         transform: translate(-50%, -50%) scale(0.7);
+    }
+}
+
+/* Normal direction */
+@keyframes menu-btn-top {
+
+    50%,
+    60% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(19px) rotate(-45deg);
+    }
+}
+
+@keyframes menu-btn-medium {
+    50% {
+        opacity: 1;
+    }
+
+    60%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes menu-btn-bottom {
+
+    50%,
+    60% {
+        bottom: 50%;
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(-19px) rotate(45deg);
+    }
+}
+
+/* Reverse direction */
+
+
+/* span {
+
+    &:nth-of-type(1) {
+        top: 0;
+    }
+
+    &:nth-of-type(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:nth-of-type(3) {
+        bottom: 0;
+    }
+} */
+
+@keyframes menu-btn-top-reverse {
+
+    0% {
+        transform: translateY(19px) rotate(-45deg);
+    }
+
+    40%,
+    50% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        top: 0;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes menu-btn-medium-reverse {
+
+    0%,
+    40% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+}
+
+@keyframes menu-btn-bottom-reverse {
+    0% {
+        transform: translateY(-19px) rotate(45deg);
+    }
+
+    40%,
+    50% {
+        bottom: 50%;
+        transform: translateY(50%);
+    }
+
+    100% {
+        bottom: 0;
+        transform: translateY(0);
     }
 }
